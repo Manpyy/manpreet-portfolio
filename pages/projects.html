@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// what I've built</span>
+      <h1 class="page-title">PRO<br>JECTS</h1>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-group reveal">
+      <input type="radio" name="projcat" id="p-all" value="all" checked>
+      <label for="p-all">🌐 All</label>
+      <input type="radio" name="projcat" id="p-banking" value="banking">
+      <label for="p-banking">🏦 Banking</label>
+      <input type="radio" name="projcat" id="p-data" value="data">
+      <label for="p-data">📊 Data</label>
+      <input type="radio" name="projcat" id="p-product" value="product">
+      <label for="p-product">🚀 Product</label>
+    </div>
+
+    <div class="projects-grid" id="projects-container">
+
+      <div class="project-card reveal" data-cat="banking">
+        <div>
+          <span class="project-tag">Banking · Process</span>
+          <div class="project-title">Payment Lifecycle Optimization Framework</div>
+          <p class="project-desc">Mapped and re-engineered the end-to-end payment lifecycle at TD Bank — from authorization to settlement, clearing, chargebacks, and exception handling. Identified process gaps that reduced reconciliation errors and improved SLA compliance across high-volume transaction environments.</p>
+          <div class="project-tools">
+            <span class="project-tool">BPMN</span>
+            <span class="project-tool">Visio</span>
+            <span class="project-tool">Excel</span>
+            <span class="project-tool">Confluence</span>
+            <span class="project-tool">JIRA</span>
+          </div>
+        </div>
+        <div class="project-number">01</div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-cat="data">
+        <div>
+          <span class="project-tag">Data · Reporting</span>
+          <div class="project-title">Customer Portfolio KPI Dashboard (Power BI)</div>
+          <p class="project-desc">Designed and deployed executive-level Power BI dashboards for a CAD 1M+ client portfolio. Tracked sales pipeline health, engagement patterns, and product adoption rates. The dashboard replaced manual reporting, cutting reporting cycle time significantly and improving decision visibility for senior stakeholders.</p>
+          <div class="project-tools">
+            <span class="project-tool">Power BI</span>
+            <span class="project-tool">Excel</span>
+            <span class="project-tool">Salesforce CRM</span>
+            <span class="project-tool">SQL</span>
+          </div>
+        </div>
+        <div class="project-number">02</div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-cat="banking">
+        <div>
+          <span class="project-tag">Banking · CRM</span>
+          <div class="project-title">CRM Workflow Redesign — Customer Onboarding</div>
+          <p class="project-desc">Led As-Is / To-Be process modelling for customer onboarding in Salesforce CRM. Redesigned case lifecycle and service workflows to reduce friction, improve agent efficiency, and align with compliance requirements including KYC and data governance standards.</p>
+          <div class="project-tools">
+            <span class="project-tool">Salesforce CRM</span>
+            <span class="project-tool">Lucidchart</span>
+            <span class="project-tool">BPMN</span>
+            <span class="project-tool">Confluence</span>
+          </div>
+        </div>
+        <div class="project-number">03</div>
+      </div>
+
+      <div class="project-card reveal" data-cat="product">
+        <div>
+          <span class="project-tag">Product · PropTech</span>
+          <div class="project-title">Nebourhood — SaaS PropTech Platform (Co-Founder)</div>
+          <p class="project-desc">Co-founded and led product delivery for a B2B2C SaaS platform connecting property owners with interior design service providers in Bengaluru, India. Defined MVP scope, user flows, vendor matching logic, and service lifecycle tracking. Worked alongside engineering to validate behaviour and manage iterative releases.</p>
+          <div class="project-tools">
+            <span class="project-tool">Product Discovery</span>
+            <span class="project-tool">User Journey Design</span>
+            <span class="project-tool">SaaS Architecture</span>
+            <span class="project-tool">Agile</span>
+            <span class="project-tool">Figma</span>
+          </div>
+        </div>
+        <div class="project-number">04</div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-cat="data">
+        <div>
+          <span class="project-tag">Data · Compliance</span>
+          <div class="project-title">Data Quality Assurance (DQA) Framework</div>
+          <p class="project-desc">Contributed to building a data quality assurance process for a multi-system financial environment. Developed reconciliation procedures and validation scripts to catch transaction discrepancies between front-end CRM and core banking engines. Supported audit readiness and AML compliance validation.</p>
+          <div class="project-tools">
+            <span class="project-tool">SQL</span>
+            <span class="project-tool">Oracle DB</span>
+            <span class="project-tool">Excel</span>
+            <span class="project-tool">Compliance Frameworks</span>
+          </div>
+        </div>
+        <div class="project-number">05</div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-cat="banking">
+        <div>
+          <span class="project-tag">Banking · AI</span>
+          <div class="project-title">AI-Assisted Documentation Automation</div>
+          <p class="project-desc">Implemented Microsoft Copilot into daily BA workflows — automating BRD summarization, sprint documentation, meeting minutes extraction, and reporting drafts. Achieved measurable improvement in turnaround time for stakeholder deliverables while maintaining documentation accuracy standards.</p>
+          <div class="project-tools">
+            <span class="project-tool">Microsoft Copilot</span>
+            <span class="project-tool">SharePoint</span>
+            <span class="project-tool">Confluence</span>
+            <span class="project-tool">JIRA</span>
+          </div>
+        </div>
+        <div class="project-number">06</div>
+      </div>
+
+    </div>
+    <div style="margin-bottom:5rem;"></div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('input[name="projcat"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const val = radio.value;
+        document.querySelectorAll('.project-card').forEach((card, i) => {
+          if (val === 'all' || card.dataset.cat === val) {
+            card.style.display = 'grid';
+            card.style.opacity = '0';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              card.style.opacity = '1';
+            }, i * 60);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

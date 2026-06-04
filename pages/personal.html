@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="personal.html" class="active">Personal</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// the real me</span>
+      <h1 class="page-title">PERSONAL<br>SIDE</h1>
+    </div>
+
+    <p class="reveal" style="font-size:1rem;color:var(--muted);max-width:600px;line-height:1.9;margin-bottom:3.5rem;">
+      Beyond the dashboards and BRDs, here's what actually makes me tick. I'm a proud Gen Z professional — meaning I can context-switch between Agile ceremonies and doom-scrolling in under 0.3 seconds. ⚡
+    </p>
+
+    <div class="personal-grid">
+
+      <div class="personal-card reveal" style="border-color:rgba(52,211,153,0.3);hover-border-color:var(--green);">
+        <span class="pc-emoji">⛳</span>
+        <div class="pc-title">Golf Enthusiast</div>
+        <p class="pc-text">Golf is my happy place — fairways, fresh air, and the humbling reality that a tiny white ball can absolutely destroy your mood. It's taught me patience, strategy, and how to recover gracefully from a bad shot (skills that transfer surprisingly well to failed sprints).</p>
+      </div>
+
+      <div class="personal-card reveal delay-1" style="border-color:rgba(168,85,247,0.3);">
+        <span class="pc-emoji">📱</span>
+        <div class="pc-title">Chronically Online (But Make It Professional)</div>
+        <p class="pc-text">If LinkedIn had a Reels section, I'd be dangerous. I stay on top of tech trends, AI news, and business world drama via Twitter/X, Reddit, and YouTube rabbit holes at 2am. No notes, no regrets.</p>
+      </div>
+
+      <div class="personal-card reveal delay-2" style="border-color:rgba(56,189,248,0.3);">
+        <span class="pc-emoji">☕</span>
+        <div class="pc-title">Coffee Philosopher</div>
+        <p class="pc-text">My entire productivity system runs on caffeine. Iced coffee in summer, hot coffee in winter, emergency coffee in every sprint. I have strong opinions about coffee shops and will rank them unprompted.</p>
+      </div>
+
+      <div class="personal-card reveal" style="border-color:rgba(236,72,153,0.3);">
+        <span class="pc-emoji">🎵</span>
+        <div class="pc-title">Music = Mood</div>
+        <p class="pc-text">My Spotify playlists are the most honest part of my personality. Lo-fi for deep work, Punjabi bangers for commutes, and something cinematic when I need to feel like I'm in a movie during a tough Excel session.</p>
+      </div>
+
+      <div class="personal-card reveal delay-1" style="border-color:rgba(251,191,36,0.3);">
+        <span class="pc-emoji">✈️</span>
+        <div class="pc-title">Two Worlds, One Story</div>
+        <p class="pc-text">Growing up in India and building a career in Canada has given me a unique lens — I bridge cultures as naturally as I bridge business and tech. I genuinely love how different perspectives make problems easier to solve.</p>
+      </div>
+
+      <div class="personal-card reveal delay-2" style="border-color:rgba(168,85,247,0.3);">
+        <span class="pc-emoji">🧠</span>
+        <div class="pc-title">AI Nerd (Obviously)</div>
+        <p class="pc-text">I've been using AI tools before they were cool — and now that they are cool, I feel very justified. From Microsoft Copilot at work to experimenting with LLMs on weekends, I'm genuinely excited about where this goes.</p>
+      </div>
+
+      <div class="personal-card reveal" style="border-color:rgba(52,211,153,0.3);">
+        <span class="pc-emoji">🏏</span>
+        <div class="pc-title">Cricket Fan</div>
+        <p class="pc-text">Big cricket fan. Diehard supporter of the Indian team and a connoisseur of watching dramatic last-over finishes with way too much emotional investment. IPL season hits different.</p>
+      </div>
+
+      <div class="personal-card reveal delay-1" style="border-color:rgba(56,189,248,0.3);">
+        <span class="pc-emoji">📚</span>
+        <div class="pc-title">Accidental Reader</div>
+        <p class="pc-text">I don't set reading goals — I just find a good book and then suddenly it's 3am. Business books, tech memoirs, and the occasional thriller when I need my brain to completely leave the building.</p>
+      </div>
+
+      <div class="personal-card reveal delay-2" style="border-color:rgba(236,72,153,0.3);">
+        <span class="pc-emoji">🤳</span>
+        <div class="pc-title">Gen Z Core Traits</div>
+        <p class="pc-text">Fluent in meme culture. Prefers async communication. Has 47 browser tabs open at any given moment. Sets 6 alarms. Genuinely cares about work-life balance. Will absolutely send a voice note instead of typing a paragraph.</p>
+      </div>
+
+    </div>
+
+    <!-- Fun Facts -->
+    <div style="margin-top:5rem;">
+      <h2 class="reveal" style="font-family:var(--font-display);font-size:3rem;margin-bottom:2rem;background:linear-gradient(135deg,var(--yellow),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">FUN FACTS</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;">
+        <div class="card reveal" style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-size:1.5rem;flex-shrink:0;">🌐</span>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Has lived in 2 countries and 3 cities — Chennai, Bengaluru, and London (Ontario edition).</p>
+        </div>
+        <div class="card reveal delay-1" style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-size:1.5rem;flex-shrink:0;">⛳</span>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Once played a round of golf in the rain and actually enjoyed it. Says a lot about the character.</p>
+        </div>
+        <div class="card reveal delay-2" style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-size:1.5rem;flex-shrink:0;">💡</span>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Co-founded a startup before the age of 25. Learned more from it than from any course.</p>
+        </div>
+        <div class="card reveal" style="display:flex;gap:1rem;align-items:flex-start;">
+          <span style="font-size:1.5rem;flex-shrink:0;">🏦</span>
+          <p style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Went from startup founder to a Big 5 Canadian bank in one move. The career arc is cinematic.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:5rem;"></div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

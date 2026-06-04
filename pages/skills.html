@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// what I bring</span>
+      <h1 class="page-title">MY<br>SKILLS</h1>
+    </div>
+
+    <!-- FILTER RADIO BUTTONS -->
+    <div class="filter-group reveal" id="skill-filter">
+      <input type="radio" name="skillcat" id="f-all" value="all" checked>
+      <label for="f-all">⚡ All</label>
+
+      <input type="radio" name="skillcat" id="f-analysis" value="analysis">
+      <label for="f-analysis">🔍 Analysis</label>
+
+      <input type="radio" name="skillcat" id="f-data" value="data">
+      <label for="f-data">📊 Data & Reporting</label>
+
+      <input type="radio" name="skillcat" id="f-tools" value="tools">
+      <label for="f-tools">🛠 Tools</label>
+
+      <input type="radio" name="skillcat" id="f-agile" value="agile">
+      <label for="f-agile">🏃 Agile</label>
+
+      <input type="radio" name="skillcat" id="f-tech" value="tech">
+      <label for="f-tech">💻 Tech</label>
+    </div>
+
+    <!-- SKILLS GRID -->
+    <div class="skills-grid" id="skills-container">
+
+      <div class="skill-category reveal" data-cat="analysis">
+        <div class="skill-cat-title">📋 Business Analysis</div>
+        <div class="skill-tags">
+          <span class="skill-tag">BRD / FRD Writing</span>
+          <span class="skill-tag">Requirements Elicitation</span>
+          <span class="skill-tag">Functional Mapping</span>
+          <span class="skill-tag">Traceability Matrix</span>
+          <span class="skill-tag">Gap Analysis</span>
+          <span class="skill-tag">Impact Assessment</span>
+          <span class="skill-tag">User Stories</span>
+          <span class="skill-tag">Stakeholder Mgmt</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-1" data-cat="analysis">
+        <div class="skill-cat-title">🔄 Process Modelling</div>
+        <div class="skill-tags">
+          <span class="skill-tag">BPMN</span>
+          <span class="skill-tag">Swimlane Diagrams</span>
+          <span class="skill-tag">As-Is / To-Be Flows</span>
+          <span class="skill-tag">Workflow Design</span>
+          <span class="skill-tag">Visio</span>
+          <span class="skill-tag">Lucidchart</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-2" data-cat="data">
+        <div class="skill-cat-title">📊 Data & Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Excel (Advanced)</span>
+          <span class="skill-tag">SQL (Querying)</span>
+          <span class="skill-tag">KPI Dashboards</span>
+          <span class="skill-tag">Reconciliation</span>
+          <span class="skill-tag">MIS Reporting</span>
+          <span class="skill-tag">Data Validation</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal" data-cat="agile">
+        <div class="skill-cat-title">🏃 Agile / Scrum</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Sprint Planning</span>
+          <span class="skill-tag">Backlog Grooming</span>
+          <span class="skill-tag">Story Refinement</span>
+          <span class="skill-tag">Sprint Reviews</span>
+          <span class="skill-tag">UAT Coordination</span>
+          <span class="skill-tag">Defect Tracking</span>
+          <span class="skill-tag">Release Management</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-1" data-cat="tools">
+        <div class="skill-cat-title">🛠 Enterprise Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Salesforce CRM</span>
+          <span class="skill-tag">JIRA</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">Microsoft Copilot</span>
+          <span class="skill-tag">MS Office Suite</span>
+          <span class="skill-tag">SharePoint</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-2" data-cat="tech">
+        <div class="skill-cat-title">💻 Technical</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Oracle DB</span>
+          <span class="skill-tag">Core Banking Systems</span>
+          <span class="skill-tag">CRM Platforms</span>
+          <span class="skill-tag">Payment Lifecycle</span>
+          <span class="skill-tag">API Concepts</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal" data-cat="analysis">
+        <div class="skill-cat-title">🏦 Domain Knowledge</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Retail Banking</span>
+          <span class="skill-tag">Payment Processing</span>
+          <span class="skill-tag">KYC / AML</span>
+          <span class="skill-tag">Regulatory Compliance</span>
+          <span class="skill-tag">Settlement & Clearing</span>
+          <span class="skill-tag">Chargeback Flows</span>
+          <span class="skill-tag">IFIC Mutual Funds</span>
+          <span class="skill-tag">PropTech (SaaS)</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal delay-1" data-cat="tools">
+        <div class="skill-cat-title">🤖 AI & Productivity</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Copilot</span>
+          <span class="skill-tag">AI-Assisted Workflows</span>
+          <span class="skill-tag">Automation Analysis</span>
+          <span class="skill-tag">Prompt Thinking</span>
+          <span class="skill-tag">Doc Summarization</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skill Proficiency Bars -->
+    <div style="margin-top:5rem;">
+      <h2 class="reveal" style="font-family:var(--font-display);font-size:3rem;margin-bottom:2.5rem;background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">PROFICIENCY</h2>
+      <div id="skill-bars" style="display:flex;flex-direction:column;gap:1.5rem;max-width:700px;">
+      </div>
+    </div>
+    <div style="margin-bottom:5rem;"></div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Filter functionality
+    document.querySelectorAll('input[name="skillcat"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const val = radio.value;
+        document.querySelectorAll('.skill-category').forEach(card => {
+          if (val === 'all' || card.dataset.cat === val) {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.transition = 'all 0.4s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Skill bars
+    const skills = [
+      { name: 'Business Analysis & Requirements', pct: 95, color: 'var(--purple)' },
+      { name: 'Power BI & Data Visualization', pct: 85, color: 'var(--blue)' },
+      { name: 'Agile / Scrum Delivery', pct: 90, color: 'var(--green)' },
+      { name: 'Process Modelling (BPMN)', pct: 88, color: 'var(--pink)' },
+      { name: 'Salesforce CRM', pct: 78, color: 'var(--yellow)' },
+      { name: 'SQL & Data Querying', pct: 72, color: 'var(--blue)' },
+      { name: 'Microsoft Copilot / AI Tools', pct: 82, color: 'var(--purple)' },
+    ];
+
+    const container = document.getElementById('skill-bars');
+    skills.forEach((s, i) => {
+      const div = document.createElement('div');
+      div.className = 'reveal';
+      div.style.transitionDelay = `${i * 0.08}s`;
+      div.innerHTML = `
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
+          <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--white);letter-spacing:0.05em;">${s.name}</span>
+          <span style="font-family:var(--font-mono);font-size:0.72rem;color:${s.color};">${s.pct}%</span>
+        </div>
+        <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
+          <div class="skill-bar-fill" style="height:100%;width:0%;background:${s.color};border-radius:2px;transition:width 1.2s ease;box-shadow:0 0 10px ${s.color};" data-width="${s.pct}%"></div>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    // Animate bars on scroll
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            setTimeout(() => { bar.style.width = bar.dataset.width; }, 200);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('#skill-bars .reveal').forEach(el => barObserver.observe(el));
+  </script>
+</body>
+</html>

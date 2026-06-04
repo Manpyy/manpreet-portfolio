@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- BLOG MODAL -->
+  <div class="modal-overlay" id="blog-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="modal-tag" id="modal-tag"></span>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// thoughts & takes</span>
+      <h1 class="page-title">THE<br>BLOG</h1>
+    </div>
+
+    <p class="reveal" style="font-size:1rem;color:var(--muted);max-width:580px;line-height:1.9;margin-bottom:3rem;">
+      I write about AI, business analysis, tech trends, and what it actually feels like to be a Gen Z professional navigating the 2020s. No fluff, just honest takes.
+    </p>
+
+    <!-- Filter -->
+    <div class="filter-group reveal">
+      <input type="radio" name="blogcat" id="b-all" value="all" checked>
+      <label for="b-all">📡 All</label>
+      <input type="radio" name="blogcat" id="b-ai" value="ai">
+      <label for="b-ai">🤖 AI</label>
+      <input type="radio" name="blogcat" id="b-data" value="data">
+      <label for="b-data">📊 Data</label>
+      <input type="radio" name="blogcat" id="b-career" value="career">
+      <label for="b-career">💼 Career</label>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <div class="blog-card reveal bc-ai" data-cat="ai" onclick="openModal('ai1')">
+        <div class="blog-card-top">🤖</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">AI · 8 min read</span>
+          <div class="blog-card-title">AI Is Not Taking Your Job — But Someone Using AI Will</div>
+          <p class="blog-card-excerpt">The conversation has shifted. It's no longer "will AI replace humans?" — it's "are you using AI effectively enough to stay relevant?" Here's what that actually means for business analysts.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>June 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal delay-1 bc-data" data-cat="data" onclick="openModal('data1')">
+        <div class="blog-card-top">📊</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Data · 6 min read</span>
+          <div class="blog-card-title">Why Most Power BI Dashboards Miss the Point Entirely</div>
+          <p class="blog-card-excerpt">A beautiful dashboard that nobody acts on is just expensive wallpaper. After building KPI reporting for a $1M+ portfolio, here's what I learned about dashboards that actually drive decisions.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>May 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal delay-2 bc-career" data-cat="career" onclick="openModal('career1')">
+        <div class="blog-card-top">💼</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Career · 7 min read</span>
+          <div class="blog-card-title">From Startup Founder to Big 5 Bank: What I Learned</div>
+          <p class="blog-card-excerpt">Co-founding a proptech startup in Bengaluru and then joining TD Bank in Canada is quite a career arc. Here's the honest truth about what each world taught me — and what it didn't.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>April 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal bc-ai" data-cat="ai" onclick="openModal('ai2')">
+        <div class="blog-card-top">🧠</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">AI · 10 min read</span>
+          <div class="blog-card-title">Microsoft Copilot in Banking: Real Use, Real Results</div>
+          <p class="blog-card-excerpt">Everyone's talking about AI in finance in theory. I've been using Microsoft Copilot in production at a major bank. Here's what actually works, what doesn't, and what nobody tells you.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>March 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal delay-1 bc-career" data-cat="career" onclick="openModal('career2')">
+        <div class="blog-card-top">🚀</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Career · 5 min read</span>
+          <div class="blog-card-title">Being a Gen Z Business Analyst: Advantage or Stereotype?</div>
+          <p class="blog-card-excerpt">I walk into rooms where I'm often the youngest person. Sometimes that's an asset. Sometimes it means I have to work three times as hard to be taken seriously. Let's talk about it.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>Feb 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal delay-2 bc-data" data-cat="data" onclick="openModal('data2')">
+        <div class="blog-card-top">🔍</div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Data · 6 min read</span>
+          <div class="blog-card-title">The BA's Guide to Not Drowning in Requirements</div>
+          <p class="blog-card-excerpt">Requirements elicitation sounds straightforward — until you're in a room with 12 stakeholders who all want different things and are very confident they're right. Here's my field guide.</p>
+          <div class="blog-card-meta">
+            <span>Manpreet Singh</span>
+            <span>Jan 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-bottom:5rem;"></div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Blog Filter
+    document.querySelectorAll('input[name="blogcat"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const val = radio.value;
+        document.querySelectorAll('.blog-card').forEach(card => {
+          if (val === 'all' || card.dataset.cat === val) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Blog content
+    const blogs = {
+      ai1: {
+        tag: 'AI · 8 min read',
+        title: 'AI Is Not Taking Your Job — But Someone Using AI Will',
+        meta: 'By Manpreet Singh · June 2026 · Business Analysis, Artificial Intelligence',
+        body: `
+          <p>Let me start with the take everyone has but nobody says out loud: <strong>the fear of AI replacing jobs is mostly a distraction from the real question — are you using AI well enough to be irreplaceable?</strong></p>
+
+          <h3>The Narrative We Keep Getting Wrong</h3>
+          <p>Every few months, a new study drops saying X% of jobs will be automated by 2030. The headlines write themselves. The LinkedIn discourse explodes. And then... everyone goes back to doing their jobs the same way they did before.</p>
+          <p>Here's what's actually happening: AI isn't replacing roles wholesale. It's compressing the low-skill floor of every role. What used to take a junior analyst two days now takes a senior analyst two hours with the right tools. That gap doesn't disappear jobs — it changes who gets hired and how much leverage one person can carry.</p>
+
+          <h3>What I've Seen in Banking</h3>
+          <p>At TD Bank, I've watched AI-assisted tools — specifically Microsoft Copilot — transform documentation workflows. Meeting summaries that used to take 45 minutes now take 5. Sprint retrospective writeups, BRD drafts, email threads — all accelerated significantly.</p>
+          <p>But here's the nuance: <strong>the AI doesn't think for you</strong>. It still needs someone with domain expertise to prompt it correctly, validate the output, and translate it into something stakeholders actually trust. The BA who understands payment lifecycle processes will always get better AI output than one who doesn't — because garbage in, garbage out still applies.</p>
+
+          <h3>The Three Things AI Actually Changed in My Day-to-Day</h3>
+          <p><strong>1. Speed of first drafts.</strong> Whether it's a process flow summary or a UAT test plan outline, I now start with an AI-generated skeleton and refine it — instead of starting from a blank page. This alone is a 40–50% time saving on documentation tasks.</p>
+          <p><strong>2. Research and synthesis.</strong> Summarizing regulatory updates, pulling patterns from large datasets, cross-referencing compliance requirements — all faster. I can synthesize a complex document in minutes and then apply judgment on what matters.</p>
+          <p><strong>3. Communication clarity.</strong> I use AI to pressure-test my stakeholder communications before I send them. "Does this message come across clearly to a non-technical audience?" is a surprisingly powerful prompt.</p>
+
+          <h3>What AI Can't Replace (Yet)</h3>
+          <p>Relationship trust. Organizational context. Reading the room in a sprint planning session. The ability to know which stakeholder's concern is the real blocker versus the political noise. These are still deeply human and deeply valuable.</p>
+          <p>The business analyst who thrives in the next decade won't be the one who avoids AI — it'll be the one who uses it to punch three levels above their weight class while maintaining the judgment that keeps everything on rails.</p>
+
+          <h3>The Bottom Line</h3>
+          <p>Stop worrying about whether AI will take your job. Start asking: <em>am I using AI to produce the kind of output that would have required two of me six months ago?</em> If the answer is no, that's the thing to fix. Not the fear — the skill gap.</p>
+          <p>We're in the early innings of a fundamental shift in knowledge work. The analysts, the managers, the consultants who figure out how to combine domain expertise with AI leverage will define what these roles look like for the next generation. I'd rather be building that than watching from the sidelines.</p>
+        `
+      },
+      data1: {
+        tag: 'Data · 6 min read',
+        title: 'Why Most Power BI Dashboards Miss the Point Entirely',
+        meta: 'By Manpreet Singh · May 2026 · Data, Business Intelligence, Power BI',
+        body: `
+          <p>I've seen dashboards that look like they belong in a sci-fi movie. Beautiful gradients. Animated KPIs. Color-coded everything. And then I've sat in the meeting where the executive looks at it and says: <strong>"So... what should I actually do with this?"</strong></p>
+          <p>That silence is the sound of a dashboard that missed the point.</p>
+
+          <h3>The Trap: Design Over Decision</h3>
+          <p>Business intelligence tools like Power BI have gotten so good at making things look impressive that we've started confusing visual quality with analytical value. A dashboard is not a report card for your data team. It's a decision support tool. And if it doesn't help someone make a faster, better, more confident decision — it's failing at its only job.</p>
+
+          <h3>What I Learned Building KPI Dashboards at TD Bank</h3>
+          <p>When I was designing performance dashboards for a CAD 1M+ client portfolio, I made a rule early on: <strong>every chart has to answer a specific question someone actually asks.</strong></p>
+          <p>Not "this might be useful." Not "this data is available." Someone, somewhere in the business, needs to make a call, and this visualization helps them make it faster and with more confidence. If I couldn't name that person and that decision, the chart didn't make it in.</p>
+          <p>This sounds obvious. It's shockingly rarely practiced.</p>
+
+          <h3>The Three Most Common Dashboard Mistakes</h3>
+          <p><strong>1. Too many metrics, no hierarchy.</strong> When everything is highlighted, nothing is. Your dashboard needs a clear visual hierarchy: one or two headline numbers, then supporting context, then drill-down capability. Most dashboards cram 30 KPIs onto one page and call it comprehensive. I call it chaos.</p>
+          <p><strong>2. No time context.</strong> A number without a baseline is just a number. Is a 12% conversion rate good or bad? Compared to what — last month? Last year? The industry benchmark? Dashboards that display metrics without temporal or comparative context create false confidence.</p>
+          <p><strong>3. Showing what happened instead of what to do next.</strong> This is the big one. Descriptive analytics tell you what occurred. What decision-makers actually need is directional insight — where to focus, what's at risk, what's trending in the wrong direction before it becomes a problem. Build for action, not just awareness.</p>
+
+          <h3>A Framework That Actually Works</h3>
+          <p>For every dashboard I now build, I ask three questions: <em>Who will use this, when, and to make what decision?</em> The answers shape everything — the metrics selected, the time windows displayed, the level of drill-down built in.</p>
+          <p>A sales director checking pipeline health at the start of the week needs different information than an ops analyst running a reconciliation review. Same data, entirely different dashboards.</p>
+
+          <h3>The Final Word</h3>
+          <p>Your dashboard isn't finished when it looks good. It's finished when the person who uses it walks away knowing exactly what to do next. Build toward that moment — not the screenshot.</p>
+        `
+      },
+      career1: {
+        tag: 'Career · 7 min read',
+        title: 'From Startup Founder to Big 5 Bank: What I Learned',
+        meta: 'By Manpreet Singh · April 2026 · Career, Startup, Banking',
+        body: `
+          <p>Bengaluru to London, Ontario. Co-founder of a proptech startup to Business Analyst at TD Bank. On paper it sounds like a pivot. Living it felt more like a translation — of skills, of pace, of mindset.</p>
+          <p>Here's my honest account of what each world taught me — and what each world couldn't.</p>
+
+          <h3>What the Startup Taught Me</h3>
+          <p><strong>Speed and ambiguity tolerance.</strong> At Nebourhood, we made product decisions in hours that would take weeks in a large organization. There was no committee, no sign-off chain. You owned the outcome completely. That level of accountability sharpens your judgment faster than anything else.</p>
+          <p><strong>Customer proximity.</strong> In a startup, you're never more than two conversations away from the actual person using your product. That closeness permanently changes how you think about requirements. You stop writing user stories as abstractions and start writing them as real human problems.</p>
+          <p><strong>Failing without a safety net.</strong> A bad feature decision in a startup costs you users and runway. The consequences are immediate and visible. This teaches you to be deliberate — to test assumptions early, to validate before you build, to kill your darlings when the data says to.</p>
+
+          <h3>What the Bank Taught Me</h3>
+          <p><strong>Scale and consequence.</strong> At TD Bank, a single process change can affect millions of transactions. The rigor required — documentation, compliance checks, UAT validation, stakeholder alignment — exists because the stakes are enormous. I learned to respect structure as a feature, not a bug.</p>
+          <p><strong>Stakeholder navigation.</strong> In a large institution, shipping something requires managing competing priorities across business units, technology teams, compliance, and operations. Learning to build alignment across that matrix is its own discipline. The startup founder in me had to learn patience. Real patience.</p>
+          <p><strong>Domain depth.</strong> Banking has layers — regulatory, operational, technical — that you can only understand through sustained exposure. I developed genuine expertise in payment lifecycles, KYC/AML processes, and core banking architecture. That depth is hard-won and genuinely valuable.</p>
+
+          <h3>The Translation Layer</h3>
+          <p>The skill that survived both worlds completely intact? <strong>Translating between business needs and technical reality.</strong> Whether it was explaining a feature requirement to developers in Bengaluru or aligning a system enhancement request with a banking technology team in Toronto, the core skill is the same: understand what both sides need, find the overlap, communicate it clearly.</p>
+          <p>That's the through-line of my entire career. Everything else has been context.</p>
+
+          <h3>Would I Do It Again?</h3>
+          <p>Without question. The unconventional path gave me something a straight corporate ladder couldn't: the ability to see institutional problems with an outsider's eyes and the credibility to propose solutions with an insider's language. That combination is genuinely rare — and I don't take it for granted.</p>
+        `
+      },
+      ai2: {
+        tag: 'AI · 10 min read',
+        title: 'Microsoft Copilot in Banking: Real Use, Real Results',
+        meta: 'By Manpreet Singh · March 2026 · AI, Microsoft Copilot, Banking',
+        body: `
+          <p>Everyone in fintech has an opinion on AI. Most of them are theoretical. I've been using Microsoft Copilot in a live banking environment at one of Canada's Big 5 banks. Here's what actually happened.</p>
+
+          <h3>Context First</h3>
+          <p>I want to be clear about what "using Copilot at a bank" means in practice. We're not talking about AI making credit decisions or generating regulatory filings. We're talking about AI-assisted productivity within the analyst and operations layer — documentation, communication, reporting, and synthesis. That's where I live, and that's where I've seen real results.</p>
+
+          <h3>Where It Actually Helped</h3>
+          <p><strong>Meeting summarization and action item extraction.</strong> This is the highest-impact use case I've found. After a two-hour stakeholder session, Copilot can generate a structured summary with decisions made, open questions, and assigned actions. What used to take me 30–45 minutes of active effort now takes 5–10 minutes of review and refinement. Over the course of a sprint, this adds up significantly.</p>
+          <p><strong>First-draft documentation.</strong> For BRD inputs, user story outlines, and process descriptions, I now prompt Copilot with my notes and ask for a structured first draft. The output isn't perfect — it never is — but starting from 70% complete is dramatically different from starting from zero. My cognitive load on documentation decreased noticeably.</p>
+          <p><strong>Email refinement.</strong> Before sending a complex stakeholder email — especially one involving difficult news, competing priorities, or cross-functional asks — I'll paste a draft and ask Copilot to check clarity, tone, and whether the ask is specific enough. It catches ambiguity I miss when I'm too close to the content.</p>
+          <p><strong>Research synthesis.</strong> Summarizing compliance updates, regulatory bulletins, or lengthy internal policy documents is now substantially faster. I can get a clear synthesis of a 40-page document in minutes and then focus my reading time on the sections that need my judgment.</p>
+
+          <h3>Where It Fell Short</h3>
+          <p><strong>Domain-specific accuracy.</strong> Banking has highly specific terminology and process logic. Copilot will occasionally generate plausible-sounding output that is technically wrong in a banking context. You need domain expertise to catch these errors — which means junior users need to be extra careful. AI confidence and AI correctness are not the same thing.</p>
+          <p><strong>Relationship and political context.</strong> No AI tool knows which stakeholder is the real decision-maker in a room, or why a particular team is resistant to a change request. That organizational intelligence is still entirely human. Copilot gives you better outputs. It doesn't give you better judgment.</p>
+          <p><strong>Data security considerations.</strong> In a regulated financial environment, you are always conscious of what data you're putting into an AI tool. Internal financial data, client information, and anything compliance-adjacent requires careful handling. We had clear guidelines on what Copilot could be used for — and those guardrails exist for good reason.</p>
+
+          <h3>The Net Verdict</h3>
+          <p>Microsoft Copilot is a genuine productivity multiplier for knowledge workers in banking — when used correctly. The ceiling of its value is set by the user's domain expertise and judgment. In the hands of someone who already knows what good output looks like, it's remarkably powerful. In the hands of someone who can't evaluate the output critically, it's a liability.</p>
+          <p>The right way to think about it: Copilot is a very capable first-draft machine and synthesis engine. <strong>The thinking still has to be yours.</strong></p>
+        `
+      },
+      career2: {
+        tag: 'Career · 5 min read',
+        title: 'Being a Gen Z Business Analyst: Advantage or Stereotype?',
+        meta: 'By Manpreet Singh · February 2026 · Career, Gen Z, Business Analysis',
+        body: `
+          <p>I'm going to say something that took me a while to admit: walking into a room as a Gen Z professional in a traditional financial institution is an experience that comes with its own set of invisible obstacles.</p>
+          <p>Not insurmountable ones. But real ones. Let's talk about them honestly.</p>
+
+          <h3>The Stereotype You're Fighting</h3>
+          <p>There's a quiet assumption that younger workers are less committed, less disciplined, and less capable of working within established structures. Some of this is generational friction that every young cohort has faced. Some of it is specific to Gen Z — we're perceived as wanting everything immediately, struggling with ambiguity, and being more loyal to our values than to any organization.</p>
+          <p>Some of those perceptions are actually accurate in ways people don't frame generously. I <em>do</em> ask "why" more than my predecessors might have. I <em>do</em> care about whether my work has meaning. I <em>do</em> value feedback quickly rather than waiting for an annual review. But those aren't character flaws — they're features, if positioned correctly.</p>
+
+          <h3>Where Being Gen Z Is Genuinely an Advantage</h3>
+          <p><strong>Technology fluency.</strong> I learned JIRA, Confluence, Power BI, and Microsoft Copilot by spending time in them, not by attending a training seminar. Gen Z professionals often have a native comfort with new tools that accelerates adoption. In a sector going through digital transformation, that's not nothing.</p>
+          <p><strong>Fresh pattern recognition.</strong> Not being steeped in "how we've always done it" means I sometimes spot process inefficiencies that get invisible through familiarity. I asked a question once about why a particular reconciliation step existed — and the honest answer was "we've always done it this way." That question opened a legitimate improvement conversation.</p>
+          <p><strong>Communication style adaptability.</strong> I can write a Confluence doc, send a precise Slack message, present to an executive committee, and send a voice note to a colleague before switching contexts. Multi-channel communication fluency is actually a professional asset.</p>
+
+          <h3>What I've Had to Work On</h3>
+          <p>Patience. Corporate timelines are not startup timelines. A good idea in a large regulated institution will move through multiple layers of review, approval, and refinement before it ships. Learning to advocate for progress without creating friction from impatience is a real skill — one I'm still developing.</p>
+          <p>Presence in formal settings. I'm naturally more comfortable with async, informal, direct communication. I've had to intentionally build the muscle for formal stakeholder presentations and executive-level communication that requires different energy.</p>
+
+          <h3>The Honest Takeaway</h3>
+          <p>Being Gen Z in a traditional industry isn't a handicap. It's a variable. What you make of it depends entirely on whether you use the advantages intentionally and work on the gaps honestly. The professionals I respect most in my generation aren't the ones who reject institutional norms — they're the ones who earn credibility within them while quietly changing what needs changing.</p>
+        `
+      },
+      data2: {
+        tag: 'Data · 6 min read',
+        title: "The BA's Guide to Not Drowning in Requirements",
+        meta: 'By Manpreet Singh · January 2026 · Business Analysis, Requirements',
+        body: `
+          <p>Requirements elicitation is one of those things that looks straightforward in a textbook and absolutely isn't in a conference room with twelve people who all have strong opinions and limited time.</p>
+          <p>I've run enough elicitation sessions — from startup product meetings to enterprise banking workshops — to know that the challenge is rarely the <em>gathering</em> of requirements. It's everything around it.</p>
+
+          <h3>The Real Problem With Requirements</h3>
+          <p>Stakeholders don't know what they want. Not because they're being difficult — because they're describing a problem in terms of solutions they've already imagined, which may or may not be the right solutions.</p>
+          <p>"We need a new report" is not a requirement. It's a proposed solution to an unstated need. Your job as a BA is to find the actual need — what decision is this report meant to support? What's failing without it? — before you write a single line of a BRD.</p>
+
+          <h3>The Five Questions That Never Fail Me</h3>
+          <p><strong>1. "What does success look like in six months?"</strong> This forces stakeholders out of feature-level thinking and into outcome-level thinking. Suddenly you're talking about what actually matters, not the specifics of a UI field or a report column.</p>
+          <p><strong>2. "Who else is affected by this that we haven't talked to yet?"</strong> Almost every project has a hidden stakeholder — a compliance team, a downstream system owner, an operations team that touches the output — who isn't in the room and whose input changes the requirements significantly.</p>
+          <p><strong>3. "What happens if we don't do this?"</strong> This is the urgency and priority calibration question. It helps distinguish between "nice to have" and "urgent business problem." The answers are often revealing.</p>
+          <p><strong>4. "Can you show me an example of what good looks like?"</strong> Abstract requirements become concrete the moment someone shows you an existing document, report, or process they think is working. That artefact tells you more than thirty minutes of conversation.</p>
+          <p><strong>5. "What would make you say this is done?"</strong> This is your acceptance criteria question in disguise. If the stakeholder can't answer this, the requirement isn't ready to be built.</p>
+
+          <h3>Managing Conflicting Requirements</h3>
+          <p>When two stakeholders want different things — and they will — your job isn't to pick a side. It's to surface the conflict explicitly, facilitate alignment, and document the agreed resolution with clear ownership. Leaving conflicting requirements unresolved is the single most common reason projects fail in UAT.</p>
+          <p>I always document <em>why</em> a requirement was scoped a certain way, not just <em>what</em> it is. Six months later, when someone asks "why did we build it this way," you want the answer in writing.</p>
+
+          <h3>The Meta-Skill</h3>
+          <p>The best business analysts I've worked with have one thing in common: they make stakeholders feel genuinely heard before they begin to redirect or challenge. <strong>Presence before process.</strong> When someone feels like you've really understood their problem, they become collaborative rather than defensive. That shift changes everything about the quality of requirements you end up with.</p>
+        `
+      }
+    };
+
+    function openModal(id) {
+      const b = blogs[id];
+      document.getElementById('modal-tag').textContent = b.tag;
+      document.getElementById('modal-title').textContent = b.title;
+      document.getElementById('modal-meta').textContent = b.meta;
+      document.getElementById('modal-body').innerHTML = b.body;
+      document.getElementById('blog-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('blog-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('blog-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>

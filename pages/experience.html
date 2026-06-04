@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// where I've been</span>
+      <h1 class="page-title">EXPERI<br>ENCE</h1>
+    </div>
+
+    <div class="timeline">
+
+      <!-- TD Bank - Toronto -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2024 – May 2026 · Toronto, Canada</div>
+        <div class="timeline-company">TD Bank</div>
+        <div class="timeline-role">Banking Operations & Data Systems Analyst · Full-time Permanent</div>
+        <ul class="timeline-bullets">
+          <li>Led business process analysis and requirement definition for retail banking systems, focusing on customer lifecycle optimization and revenue impact analysis.</li>
+          <li>Utilized data-driven decision-making frameworks to analyze client portfolio behavior, engagement patterns, and financial product adoption trends across a CAD 1M+ portfolio.</li>
+          <li>Designed performance dashboards and KPI reporting structures in Power BI for business stakeholders to track sales performance, pipeline health, and customer engagement metrics.</li>
+          <li>Translated business requirements into functional specifications and system enhancement recommendations for CRM and banking platforms.</li>
+          <li>Worked within Agile delivery environments, ensuring alignment between business requirements, sprint deliverables, and product backlog prioritization.</li>
+          <li>Performed business impact assessment and change management analysis for system upgrades and workflow transformation initiatives.</li>
+          <li>Leveraged Microsoft Copilot for documentation automation, reporting summarization, and workflow optimization.</li>
+          <li>Supported compliance integration requirements across data governance, security controls, and financial regulatory frameworks.</li>
+        </ul>
+      </div>
+
+      <!-- TD Bank - London BA -->
+      <div class="timeline-item reveal delay-1">
+        <div class="timeline-dot" style="background:var(--blue);box-shadow:0 0 12px var(--blue);"></div>
+        <div class="timeline-date">Oct 2023 – Dec 2024 · London, Canada</div>
+        <div class="timeline-company">TD Bank</div>
+        <div class="timeline-role">Business Analyst · Full-time Permanent</div>
+        <ul class="timeline-bullets">
+          <li>Conducted business requirements elicitation and documentation (BRD inputs, user stories, functional specifications) for retail banking workflows.</li>
+          <li>Designed and analyzed end-to-end business process models (As-Is / To-Be) to optimize customer onboarding, servicing, payments, and lending workflows.</li>
+          <li>Collaborated with cross-functional teams including product owners, operations, compliance, and technology stakeholders to define system requirements.</li>
+          <li>Participated in Agile/Scrum ceremonies including sprint planning, backlog refinement, story grooming, and sprint reviews.</li>
+          <li>Supported UAT planning and execution, validating system changes using real-world business scenarios and edge cases.</li>
+          <li>Developed process flow diagrams, swimlane models, and BPMN-style documentation for workflow visualization and stakeholder alignment.</li>
+          <li>Worked on improving customer journey orchestration and service design efficiency through process re-engineering initiatives.</li>
+          <li>Supported CRM-driven workflow optimization and case management lifecycle improvements.</li>
+        </ul>
+      </div>
+
+      <!-- TD Bank - Contract -->
+      <div class="timeline-item reveal delay-2">
+        <div class="timeline-dot" style="background:var(--pink);box-shadow:0 0 12px var(--pink);"></div>
+        <div class="timeline-date">Dec 2022 – Oct 2023 · London, Canada</div>
+        <div class="timeline-company">TD Bank</div>
+        <div class="timeline-role">Retail Banking Process Analyst · Contract (10 months)</div>
+        <ul class="timeline-bullets">
+          <li>Supported enterprise banking operations by performing data validation, reconciliation, and integrity checks across distributed financial systems and CRM platforms.</li>
+          <li>Monitored end-to-end transaction processing lifecycle including payment initiation, authorization, clearing, settlement, refunds, chargebacks, and reconciliation workflows.</li>
+          <li>Assisted in identifying data mismatches and system integration issues between front-end CRM systems and core banking transaction engines.</li>
+          <li>Performed root-cause analysis (RCA support) for recurring transaction discrepancies and operational failures.</li>
+          <li>Contributed to data quality assurance (DQA) processes, ensuring consistency across multi-system financial records.</li>
+          <li>Supported compliance-driven data handling aligned with audit controls, KYC/AML validation, and regulatory reporting standards.</li>
+        </ul>
+      </div>
+
+      <!-- Nebourhood -->
+      <div class="timeline-item reveal delay-3">
+        <div class="timeline-dot" style="background:var(--green);box-shadow:0 0 12px var(--green);"></div>
+        <div class="timeline-date">Mar 2020 – Sep 2022 · Bengaluru, India</div>
+        <div class="timeline-company">Nebourhood</div>
+        <div class="timeline-role">Co-Founder & Technical Delivery Lead · Indian PropTech Startup</div>
+        <ul class="timeline-bullets">
+          <li>Led product discovery and solution definition for a SaaS-based platform connecting property owners with interior design service providers.</li>
+          <li>Conducted business feasibility analysis and feature prioritization to define MVP scope and iterative product roadmap.</li>
+          <li>Translated high-level business needs into structured functional flows covering user onboarding, vendor matching, and service fulfillment logic.</li>
+          <li>Designed system interaction logic for request routing, service assignment, and lifecycle tracking of customer engagements.</li>
+          <li>Worked closely with engineering teams to validate system behavior, edge-case handling, and feature dependencies during development cycles.</li>
+          <li>Performed product gap analysis and usability assessment to identify friction points in user journey and platform adoption.</li>
+          <li>Defined operational metrics and success indicators for tracking platform engagement and service performance.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="margin:4rem 0;">
+      <a href="contact.html" class="btn btn-primary">Let's Work Together →</a>
+    </div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

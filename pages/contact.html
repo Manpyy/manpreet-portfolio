@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Manpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cursor-glow"></div>
+  <nav class="navbar">
+    <div class="nav-logo"><a href="../index.html">MS<span class="dot">.</span></a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-header reveal">
+      <span class="page-tag">// let's connect</span>
+      <h1 class="page-title">GET IN<br>TOUCH</h1>
+    </div>
+
+    <p class="reveal" style="font-size:1rem;color:var(--muted);max-width:560px;line-height:1.9;margin-bottom:0;">
+      Whether it's a new opportunity, a collaboration idea, or just to chat about AI and golf — I'm always up for a good conversation. Drop me a line. ✉️
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:Manpsingh90@gmail.com" style="color:var(--purple);">Manpsingh90@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-1">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+91 (953) 826-7078</div>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-2">
+          <div class="contact-icon">🔗</div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value"><a href="#" style="color:var(--blue);">linkedin.com/in/manpreet</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item reveal delay-3">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">London, Ontario 🍁</div>
+          </div>
+        </div>
+
+        <!-- Availability Badge -->
+        <div class="reveal" style="margin-top:1rem;">
+          <div style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:100px;padding:0.6rem 1.2rem;">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-glow 2s infinite;"></span>
+            <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--green);letter-spacing:0.05em;">Open to new opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal delay-1">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="e.g. Jane Smith" id="form-name" required>
+          </div>
+          <div class="form-group">
+            <label>Your Email</label>
+            <input type="email" placeholder="jane@example.com" id="form-email" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Job opportunity / Collaboration / Just saying hi" id="form-subject">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me what's on your mind..." id="form-message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;text-align:center;">Send Message ✦</button>
+          <div id="form-feedback" style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;text-align:center;display:none;color:var(--green);">
+            ✓ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div style="margin-bottom:5rem;"></div>
+  </div>
+
+  <footer class="footer"><p>© 2026 Manpreet Singh · Built with 🔥 & stardust</p></footer>
+  <script src="../js/galaxy.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      feedback.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => { feedback.style.display = 'none'; }, 4000);
+    }
+  </script>
+</body>
+</html>
